@@ -11,7 +11,7 @@ import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction';
 import { TodosContext } from './context/todos.context';
 
 export default function Todo({task, completed, id}) {
-  const { removeTodo, toggleTodo } = useContext(TodosContext);
+  const { todos, dispatch } = useContext(TodosContext);
   const [isEditing, toggleIsEditing] = useToggleState(false);
   return (
     <ListItem style={{height: "64px"}}>
@@ -22,12 +22,12 @@ export default function Todo({task, completed, id}) {
           toggleIsEditing={toggleIsEditing}
         /> : (
         <>
-          <Checkbox tabIndex={-1} checked={completed} onClick={() => toggleTodo(id)}/>
+          <Checkbox tabIndex={-1} checked={completed} onClick={() => dispatch({type: 'TOGGLE', id: id})}/>
           <ListItemText style={{textDecoration: completed? "line-through": "none"}}>
             {task}
           </ListItemText>
           <ListItemSecondaryAction>
-            <IconButton aria-label="Delete" onClick={() => removeTodo(id)} >
+            <IconButton aria-label="Delete" onClick={() => dispatch({type: 'REMOVE', id: id})} >
               <DeleteIcon />
             </IconButton>
             <IconButton aria-label="Edit" onClick={toggleIsEditing} >

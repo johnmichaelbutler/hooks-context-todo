@@ -25,5 +25,5 @@ export default initialTodos => {
       const updatedTodos = todos.filter(todo => todo.id !== todoId);
       setTodos(updatedTodos);
     }
-  }
-}
+  };
+};
