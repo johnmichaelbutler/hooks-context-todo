@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import TodoList from './TodoList';
 import Typograpy from '@material-ui/core/Typography';
 import Paper from '@material-ui/core/Paper';
@@ -9,7 +9,6 @@ import TodoForm from './TodoForm';
 import {TodosProvider} from './context/todos.context';
 
 function TodoApp() {
-  const initialTodos = [{ id: 1, task: "Pet a Monkey", completed: false}];
   return (
     <Paper
       style={{
@@ -22,7 +21,7 @@ function TodoApp() {
     >
       <AppBar color='primary' position='static' style={{ height: '64px'}}>
         <Toolbar>
-          <Typograpy color='inherit'>TODOS WITH HOOKS</Typograpy>
+          <Typograpy color='inherit'>TODO APP USING HOOKS AND CONTEXT API</Typograpy>
         </Toolbar>
       </AppBar>
       <Grid container justify="center" style={{marginTop: "1rem"}}>

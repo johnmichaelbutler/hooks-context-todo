@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import TextField from '@material-ui/core/TextField';
 import useInputState from './useInputState';
-import { TodosContext, DispatchContext } from './context/todos.context';
+import { DispatchContext } from './context/todos.context';
 
 
 export default function EditTodoForm({id, toggleIsEditing, task}) {

@@ -14,7 +14,7 @@ export default function TodoForm() {
         dispatch({type: "ADD", task: value});
         reset();
       }}>
-        <TextField margin="normal" label="Add New Todo" value={value} onChange={handleChange} />
+        <TextField margin="normal" label="Add New Todo" value={value} onChange={handleChange} fullWidth />
       </form>
     </Paper>
   )
